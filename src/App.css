@@ -69,3 +69,11 @@ body, pre, code { font-family: Hack, monospace; }
 .submit:hover {
   filter: brightness(125%);
 }
+
+pre {
+  text-align: left;
+  max-width: 450px;
+  white-space: pre-wrap;
+  margin: 0 auto;
+  font-size: 14px;
+}
