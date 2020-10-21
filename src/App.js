@@ -1,24 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [url, setUrl] = useState('');
+  const [urlResponse, setUrlResponse] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = await fetch('/.netlify/functions/url', {
+      method: 'POST',
+      body: JSON.stringify({ url })
+    });
+
+    const json = await data.json();
+
+    setUrlResponse(json);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
+      <section className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <form onSubmit={handleSubmit} className="form">
+          <label>
+            <input
+              className="input"
+              type="text"
+              value={url}
+              placeholder="Insert short url"
+              onChange={e => setUrl(e.target.value)}
+            />
+          </label>
+
+          <input className="submit" type="submit" value="Submit" />
+        </form>
+
+        {urlResponse && 
+          <code>
+            {JSON.stringify(urlResponse, null, 2)}
+          </code>
+        }
+      </section>
     </div>
   );
 }
