@@ -22,9 +22,9 @@ async function longUrl({ body }) {
 
             resolve({
                 statusCode: 200,
-                body: {
+                body: JSON.stringify({
                     url
-                }
+                })
             });
         });
     });
