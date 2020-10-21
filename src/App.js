@@ -39,9 +39,9 @@ function App() {
         </form>
 
         {urlResponse && 
-          <code>
+          <pre>
             {JSON.stringify(urlResponse, null, 2)}
-          </code>
+          </pre>
         }
       </section>
     </div>
