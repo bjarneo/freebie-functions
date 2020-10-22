@@ -23,16 +23,15 @@ body, pre, code { font-family: Hack, monospace; }
 }
 
 .App-header {
-  
+  width: 450px;
+  margin: 0 auto;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-
 .form {
-  margin: 0 auto;
   max-width: 450px;
   height: 140px;
 }
@@ -68,6 +67,12 @@ body, pre, code { font-family: Hack, monospace; }
 
 .submit:hover {
   filter: brightness(125%);
+}
+
+.link {
+  color: #d44032;
+  font-size: 18px;
+  float: left;
 }
 
 pre {

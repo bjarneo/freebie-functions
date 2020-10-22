@@ -39,9 +39,7 @@ function App() {
         </form>
 
         {urlResponse && 
-          <pre>
-            {JSON.stringify(urlResponse, null, 2)}
-          </pre>
+          <a className="link" href={urlResponse?.url || '#'}>{urlResponse?.url}</a>
         }
       </section>
     </div>
