@@ -38,9 +38,10 @@ body, pre, code { font-family: Hack, monospace; }
 
 .input {
   padding: 8px 16px;
-  border-radius: 5px;
+  border-radius: 25px;
   width: 100%;
-  height: 35px;
+  height: 45px;
+  font-size: 16px;
   margin-bottom: 16px;
   box-sizing: border-box; 
   background: none;
@@ -56,12 +57,12 @@ body, pre, code { font-family: Hack, monospace; }
   border: none;
   border-radius: 20px;
   width: 120px;
-  height: 35px;
+  height: 45px;
   padding: 8px 16px;
   float: right;
   background-color: #0db4ba;
   color: #e5e4e9;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -83,4 +84,14 @@ pre {
   white-space: pre-wrap;
   margin: 0 auto;
   font-size: 14px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .App-header {
+    width: 90%; 
+  }
+
+  .App-logo {
+    height: 50vmin;
+  }
 }
