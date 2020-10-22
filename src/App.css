@@ -74,6 +74,7 @@ body, pre, code { font-family: Hack, monospace; }
   font-size: 18px;
   float: left;
   text-align: left;
+  word-wrap: break-word
 }
 
 pre {
