@@ -30,7 +30,8 @@ function App() {
               className="input"
               type="text"
               value={url}
-              placeholder="Insert short url"
+              name="url"
+              placeholder="Reverse URLs"
               onChange={e => setUrl(e.target.value)}
             />
           </label>
