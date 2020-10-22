@@ -14,6 +14,15 @@ const reverse = require('long-url');
 async function longUrl({ body }) {
     const { url } = JSON.parse(body);
 
+    if (!url) {
+        return {
+            statusCode: 404,
+            body: {
+                url: ''
+            }
+        };
+    }
+
     return new Promise((resolve, reject) => {
         reverse(url, function(err, url) {
             if (err) {
@@ -28,13 +37,6 @@ async function longUrl({ body }) {
             });
         });
     });
-
-    return {
-        statusCode: 404,
-        body: {
-            url: ''
-        }
-    };
 }
 /*
 async function main() {
