@@ -73,6 +73,7 @@ body, pre, code { font-family: Hack, monospace; }
   color: #d44032;
   font-size: 18px;
   float: left;
+  text-align: left;
 }
 
 pre {
