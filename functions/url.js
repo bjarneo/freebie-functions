@@ -16,17 +16,23 @@ async function longUrl({ body }) {
 
     if (!url) {
         return {
-            statusCode: 404,
-            body: {
-                url: ''
-            }
+            statusCode: 400,
+            body: JSON.stringify({
+                error: 'No URL provided'
+            })
         };
     }
 
     return new Promise((resolve, reject) => {
         reverse(url, function(err, url) {
             if (err) {
-                reject(err);
+                reject({
+                    statusCode: 400,
+                    body: JSON.stringify({
+                        error: 'Bad URL',
+                        url
+                    })
+                });
             }
 
             resolve({
