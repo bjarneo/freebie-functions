@@ -1,6 +1,6 @@
 const reverse = require('long-url');
 
-async function longUrl({ body }) {
+function longUrl({ body }) {
     const { url } = JSON.parse(body);
 
     if (!url) {
